@@ -1,0 +1,13 @@
+{
+    "name": "yuni-tech-vue-cli",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "与你科技前端项目脚手架",
+    "scripts": {
+        "docs": "cd docs && gitbook serve",
+        "docs:deploy": "bash ./deploy-docs.sh"
+    },
+    "devDependencies": {
+        "vue-cli": "^2.8.1"
+    }
+}
