@@ -13,7 +13,6 @@ module.exports = {
         // Paths
         assetsSubDirectory: 'static',
         assetsPublicPath: {{#mobile}}'/packages/{{ name }}/versions/dev'{{else}}'/'{{/mobile}},
-        assetsPublicPath: '/',
         proxyTable: {},
         host: '0.0.0.0', // 如果设置了process.env.HOST，则优先使用process.env.HOST
         port: 8080, // 如果设置了process.env.PORT, 则优先使用process.env.PORT. 如果配置的端口被占用，会自动分配一个空闲的新端口
