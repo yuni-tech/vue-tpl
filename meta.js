@@ -50,6 +50,8 @@ module.exports = {
     filters: {
         'src/assets/css/common.css': 'mobile',
         '.eslintrc.js': 'lint',
+        'build.sh': 'yuni',
+        'deploy.sh': 'yuni',
         '.eslintignore': 'lint',
         'src/router/**/*': 'router',
         'src/pages/**/*': '!singlePage',
