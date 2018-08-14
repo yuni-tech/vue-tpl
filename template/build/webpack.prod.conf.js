@@ -7,6 +7,7 @@ const config = require('./config')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -143,6 +144,14 @@ const webpackConfig = merge(baseWebpackConfig, {
         new webpack.optimize.ModuleConcatenationPlugin(),
 
         ...commonsChunkPlugins(),
+
+        new CopyWebpackPlugin([
+            {
+                from: path.resolve(__dirname, '../static'),
+                to: config.build.assetsSubDirectory,
+                ignore: ['.*'],
+            },
+        ]),
     ],
 })
 
