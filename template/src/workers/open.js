@@ -16,7 +16,7 @@ async function main() {
         url: '/v2/chatlet/open/' + user.uid,
         type: 'POST',
         data: {
-            appid: {{ name }},
+            appid: '',
             type: cvs.cvsType,
             remoteid: cvs.cvsid,
             creatorid: user.uid,
