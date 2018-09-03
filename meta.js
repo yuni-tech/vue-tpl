@@ -51,6 +51,8 @@ module.exports = {
         'src/assets/css/common.css': 'mobile',
         '.eslintrc.js': 'lint',
         'build.sh': 'yuni',
+        'src/workers/**/*': 'yuni',
+        'build/webpack.worker.conf.js': 'yuni',
         'deploy.sh': 'yuni',
         '.eslintignore': 'lint',
         'src/router/**/*': 'router',

@@ -60,7 +60,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         hot: true,
         inline: true,
         progress: true,
-        contentBase: false, // since we use CopyWebpackPlugin.
+        contentBase: config.build.assetsRoot, // since we use CopyWebpackPlugin.
         compress: true,
         host: HOST || config.dev.host,
         port: PORT || config.dev.port,
@@ -101,7 +101,24 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         ]),
     ],
 })
-
+{{#yuni}}
+function watchWorkers() {
+    let workerConfig = require('./webpack.worker.conf')
+    workerConfig.output.path = path.join(workerConfig.output.path, config.dev.assetsPublicPath)
+    webpack(workerConfig).watch(
+        {
+            aggregateTimeout: 300,
+            poll: undefined,
+        },
+        (err, stats) => {
+            if (err) {
+                return console.error(err)
+            }
+            console.log('worker changes compiled')
+        }
+    )
+}
+{{/yuni}}
 // const openPages = Object.keys(utils.getMultiEntry('js')).map(e => e + '.html')
 // 自动检索下一个可用端口
 module.exports = new Promise((resolve, reject) => {
@@ -136,6 +153,9 @@ module.exports = new Promise((resolve, reject) => {
                     onErrors: config.dev.notifyOnErrors ? utils.createNotifierCallback() : undefined,
                 })
             )
+            {{#yuni}}
+            watchWorkers()
+            {{/yuni}}
             resolve(devWebpackConfig)
         }
     })
