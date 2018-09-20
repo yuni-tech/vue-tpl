@@ -19,6 +19,7 @@
         {{#yuni}}
         "@uneed/jsbridge-runtime": "^3.3.3",
         "@uneed/jsbridge-webview": "^3.3.3",
+        "@uneed/components": "^1.0.5",
         {{/yuni}}
         {{#mobile}}
         "fastclick-fixed": "^1.0.7",
