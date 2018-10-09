@@ -42,6 +42,11 @@ module.exports = {
             type: 'confirm',
             message: 'Use @uneed?',
         },
+        chatlet: {
+            when: 'yuni',
+            type: 'confirm',
+            message: 'Use @workers?',
+        },
         lint: {
             type: 'confirm',
             message: 'Use ESLint to lint your code?',
@@ -51,8 +56,8 @@ module.exports = {
         'src/assets/css/common.css': 'mobile',
         '.eslintrc.js': 'lint',
         'build.sh': 'yuni',
-        'src/workers/**/*': 'yuni',
-        'build/webpack.worker.conf.js': 'yuni',
+        'src/workers/**/*': 'chatlet',
+        'build/webpack.worker.conf.js': 'chatlet',
         'deploy.sh': 'yuni',
         '.eslintignore': 'lint',
         'src/router/**/*': 'router',

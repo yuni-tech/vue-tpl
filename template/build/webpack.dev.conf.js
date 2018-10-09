@@ -101,7 +101,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         ]),
     ],
 })
-{{#yuni}}
+{{#chatlet}}
 function watchWorkers() {
     let workerConfig = require('./webpack.worker.conf')
     workerConfig.output.path = path.join(workerConfig.output.path, config.dev.assetsPublicPath)
@@ -118,7 +118,7 @@ function watchWorkers() {
         }
     )
 }
-{{/yuni}}
+{{/chatlet}}
 // const openPages = Object.keys(utils.getMultiEntry('js')).map(e => e + '.html')
 // 自动检索下一个可用端口
 module.exports = new Promise((resolve, reject) => {
@@ -153,9 +153,9 @@ module.exports = new Promise((resolve, reject) => {
                     onErrors: config.dev.notifyOnErrors ? utils.createNotifierCallback() : undefined,
                 })
             )
-            {{#yuni}}
+            {{#chatlet}}
             watchWorkers()
-            {{/yuni}}
+            {{/chatlet}}
             resolve(devWebpackConfig)
         }
     })

@@ -68,7 +68,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                include: [resolve('src'),resolve('node_modules/@uneed/components')],
+                include: [resolve('src'), resolve('node_modules/@uneed/components')],
             },
             // 处理相应文件  小于2048b会被base打包而不会http请求
             {

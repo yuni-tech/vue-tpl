@@ -6,8 +6,10 @@
     "private": true,
     "scripts": {
         "dev": "webpack-dev-server --config build/webpack.dev.conf.js",
-        {{#yuni}}
+        {{#chatlet}}
         "build:worker": "webpack --config build/webpack.worker.conf.js",
+        {{/chatlet}}
+        {{#yuni}}
         "upack.init": "upack --init",
         "upack.pack": "upack --pack",
         "upack.upm": "upack --upm",
@@ -17,10 +19,12 @@
     },
     "dependencies": {
         {{#yuni}}
-        "@uneed/jsbridge-runtime": "^3.3.6",
         "@uneed/jsbridge-webview": "^3.3.6",
-        "@uneed/components": "^1.0.6",
         {{/yuni}}
+        {{#chatlet}}
+        "@uneed/jsbridge-runtime": "^3.3.6",
+        "@uneed/components": "^1.0.6",
+        {{/chatlet}}
         {{#mobile}}
         "fastclick": "^1.0.6",
         {{/mobile}}
