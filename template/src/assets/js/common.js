@@ -4,6 +4,10 @@ import '@/assets/css/common.css'
 import FastClick from 'fastclick'
 FastClick.attach(document.body)
 
+if (!window.Promise) {
+    window.Promise = Promise
+}
+
 const setRemUnit = () => {
     let html = document.documentElement
     html.style.fontSize = 100 / 3.75 + 'vw'
