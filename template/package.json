@@ -25,9 +25,6 @@
         "@uneed/jsbridge-runtime": "^3.3.6",
         "@uneed/components": "^1.0.6",
         {{/chatlet}}
-        {{#mobile}}
-        "fastclick": "^1.0.6",
-        {{/mobile}}
         {{#router}}
         "vue-router": "^3.0.1",
         {{/router}}

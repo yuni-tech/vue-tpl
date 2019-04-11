@@ -1,8 +1,8 @@
 import '@/assets/css/base.css'
 {{#mobile}}
 import '@/assets/css/common.css'
-import FastClick from 'fastclick'
-FastClick.attach(document.body)
+
+// 取消300ms延迟 安卓5.0以上和ios9以上都已经修复了这个问题 
 
 if (!window.Promise) {
     window.Promise = Promise
