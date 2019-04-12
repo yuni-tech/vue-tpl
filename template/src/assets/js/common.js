@@ -2,8 +2,7 @@ import '@/assets/css/base.css'
 {{#mobile}}
 import '@/assets/css/common.css'
 
-// 取消300ms延迟 安卓5.0以上和ios9以上都已经修复了这个问题 
-
+// 取消300ms延迟模块 安卓5.0以上和ios9以上都已经修复了这个问题 
 if (!window.Promise) {
     window.Promise = Promise
 }
@@ -41,7 +40,16 @@ const setRemUnit = () => {
         }
     }
 }
-setRemUnit()
+// 根据环境运行一些逻辑
+if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+    //ios active失效问题
+    document.body.addEventListener('touchstart', () => {})
+
+    document.documentElement.style.fontSize = 100 / 3.75 + 'vw'
+    
+} else if (/(Android)/i.test(navigator.userAgent)) {
+    setRemUnit()
+} 
    
 {{/mobile}}
 
