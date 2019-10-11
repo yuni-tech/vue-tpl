@@ -1,4 +1,4 @@
-npm install
+cnpm install
 npm run build
 {{#chatlet}}
 npm run build:worker
