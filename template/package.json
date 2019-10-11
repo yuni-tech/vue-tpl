@@ -19,7 +19,7 @@
     },
     "dependencies": {
         {{#yuni}}
-        "@uneed/jsbridge-webview": "^3.3.6",
+        "@uneed/jsbridge-webview": "^3.4.9",
         {{/yuni}}
         {{#chatlet}}
         "@uneed/jsbridge-runtime": "^3.3.6",
@@ -28,11 +28,11 @@
         {{#router}}
         "vue-router": "^3.0.1",
         {{/router}}
-        "vue": "^2.5.17"
+        "vue": "^2.6.10"
     },
     "devDependencies": {
         {{#yuni}}
-        "@uneed/upack": "^1.1.7",
+        "@uneed/upack": "^1.4.11",
         {{/yuni}}
         {{#lint}}
         "babel-eslint": "^8.2.1",
@@ -80,7 +80,7 @@
         "url-loader": "^0.5.8",
         "vue-loader": "^13.3.0",
         "vue-style-loader": "^3.0.1",
-        "vue-template-compiler": "^2.5.17",
+        "vue-template-compiler": "^2.6.10",
         "webpack": "^3.6.0",
         "webpack-bundle-analyzer": "^2.9.0",
         "webpack-dev-server": "^2.9.1",
