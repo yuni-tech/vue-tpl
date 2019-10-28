@@ -4,6 +4,20 @@ import '@/assets/css/common.css'
 
 
 const setRemUnit = () => {
+    /*
+        这样写逻辑很简单
+        为了方便计算 就定 1rem = 100px
+        设计图是 375px 那么我们需要的宽度就应该是 3.75rem  (如果设计图是 750px  那么需要的宽度就是 7.5rem)
+        如何实现界面为3.75rem宽度? 
+        可推导 (3.75rem * 转换比例px/rem = 设备宽度) => (设备宽度 / 3.75 = 转换比例px) 
+        继续推导  document.documentElement.clientWidth / 3.75  + 'px'  这就是我们需要的转换比例
+        这样ui 60pt  就是  60 / 100(我们定义了1rem = 100) = 0.6rem  (这里需要明白rem的意义)
+
+        如果是vw  就是 100 / 3.75 + 'vw'  (100就是设备宽度,vw的意义就是100vw等于document.documentElement.clientWidth+'px')
+
+        简单来说 因为我们定义了1rem=100px 设计图是375px 所以我们需要3.75的界面宽度  
+        所以  width(px或者vw) / 3.75  
+    */
     let html = document.documentElement
     html.style.fontSize = 100 / 3.75 + 'vw'
     let width = html.clientWidth
