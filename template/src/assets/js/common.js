@@ -58,7 +58,8 @@ if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
 } else if (/(Android)/i.test(navigator.userAgent)) {
     setRemUnit()
 } 
-   
+{{else}}
+import 'babel-polyfill'
 {{/mobile}}
 
 
